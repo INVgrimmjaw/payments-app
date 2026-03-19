@@ -1,15 +1,21 @@
 {
   "name": "@repo/db",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "type": "module",
+  "main": "./index.ts",
+  "types": "./index.ts",
+
+  "exports": {
+    ".": {
+      "types": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./client": {
+      "types": "./index.ts",
+      "default": "./index.ts"
+    }
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
+
   "dependencies": {
     "@prisma/adapter-pg": "^7.5.0",
     "@prisma/client": "^7.5.0",
@@ -18,8 +24,5 @@
   },
   "devDependencies": {
     "prisma": "^7.5.0"
-  },
-  "exports": {
-    "/client": "./index.ts"
   }
 }
